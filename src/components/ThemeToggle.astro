@@ -1,0 +1,27 @@
+<button class="theme-toggle" type="button" aria-label="切换昼夜主题" title="切换昼夜主题" data-theme-toggle>
+  <span class="theme-toggle__track" aria-hidden="true">
+    <span class="theme-toggle__stars">✦ · ✧</span>
+    <span class="theme-toggle__orb"></span>
+    <span class="theme-toggle__cloud">☁</span>
+  </span>
+</button>
+
+<script>
+  const syncThemeButtons = () => {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    document.querySelectorAll<HTMLElement>('[data-theme-toggle]').forEach((button) => {
+      button.setAttribute('aria-pressed', String(isDark));
+    });
+  };
+
+  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const current = document.documentElement.dataset.theme;
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+      syncThemeButtons();
+    });
+  });
+  syncThemeButtons();
+</script>

@@ -1,0 +1,14 @@
+---
+import { SITE } from '../config';
+---
+<footer class="site-footer" data-pagefind-ignore>
+  <div class="site-footer__scenery" aria-hidden="true">
+    <div class="site-footer__clouds"></div>
+    <div class="site-footer__mountains site-footer__mountains--back"></div>
+    <div class="site-footer__mountains site-footer__mountains--front"></div>
+  </div>
+  <div class="site-footer__inner">
+    <div class="site-footer__line">{SITE.title} · static archive</div>
+    <div>© {new Date().getFullYear()} {SITE.author}. Built with Astro + Pagefind.</div>
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+---
+import { tagUrl } from '../lib/articles';
+interface Props { tag: string; kind?: 'tag' | 'category'; link?: boolean }
+const { tag, kind = 'tag', link = true } = Astro.props;
+---
+
+{link ? (
+  <a class={`badge badge--${kind}`} href={tagUrl(tag)}>{tag}</a>
+) : (
+  <span class={`badge badge--${kind}`}>{tag}</span>
+)}

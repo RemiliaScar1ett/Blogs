@@ -1,0 +1,19 @@
+---
+interface Props { label?: string }
+const { label = '搜索标题、正文、标签或目录词' } = Astro.props;
+const isDev = import.meta.env.DEV;
+---
+
+<div class="search-box">
+  {isDev ? (
+    <div class="search-box__dev">
+      <strong>开发模式未生成搜索索引。</strong>
+      <span>运行 <code>npm run build</code> 后再用 <code>npm run preview</code> 查看 Pagefind 搜索。</span>
+    </div>
+  ) : (
+    <>
+      <label class="sr-only" for="pagefind-search">{label}</label>
+      <pagefind-searchbox id="pagefind-search"></pagefind-searchbox>
+    </>
+  )}
+</div>

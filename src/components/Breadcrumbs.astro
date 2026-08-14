@@ -1,0 +1,16 @@
+---
+import { treeAnchor, withBase } from '../lib/paths';
+interface Props { tree: string[] }
+const { tree } = Astro.props;
+---
+<nav class="breadcrumbs" aria-label="逻辑目录" data-pagefind-ignore>
+  {tree.map((item, index) => {
+    const path = tree.slice(0, index + 1);
+    return (
+      <>
+        {index > 0 && <span aria-hidden="true">/</span>}
+        <a href={`${withBase('/catalog/')}#${treeAnchor(path)}`}>{item}</a>
+      </>
+    );
+  })}
+</nav>

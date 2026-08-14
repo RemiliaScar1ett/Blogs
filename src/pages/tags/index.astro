@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getArticles, groupByTag } from '../../lib/articles';
+import { withBase } from '../../lib/paths';
+const articles = await getArticles();
+const tags = groupByTag(articles);
+---
+<BaseLayout title="标签">
+  <Hero title="标签" description="标签是与树形目录正交的多值分类。" eyebrow="TAGS" variant="compact" />
+  <main class="page-shell content-page" data-pagefind-ignore>
+    <div class="tag-grid">
+      {tags.map((tag) => (
+        <a class="tag-tile" href={withBase(`/tags/${tag.slug}/`)}>
+          <span>#{tag.name}</span>
+          <strong>{tag.articles.length}</strong>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

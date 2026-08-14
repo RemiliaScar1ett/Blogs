@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import { withBase } from '../lib/paths';
+---
+<BaseLayout title="404" noindex>
+  <Hero title="404" description="没有找到这个页面。" eyebrow="NOT FOUND" variant="compact" />
+  <main class="page-shell empty-page">
+    <a class="button" href={withBase('/')}>返回首页</a>
+  </main>
+</BaseLayout>

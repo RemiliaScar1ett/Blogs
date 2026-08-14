@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CatalogTree from '../../components/CatalogTree.astro';
+import { getArticles } from '../../lib/articles';
+import { buildArticleTree } from '../../lib/tree';
+const articles = await getArticles();
+const tree = buildArticleTree(articles);
+---
+<BaseLayout title="目录" description="按逻辑位置浏览全部文章。物理文件位置不参与网站分类。">
+  <Hero title="树形目录" description="逻辑目录由 frontmatter 中的 tree 字段生成。" eyebrow="CATALOG" variant="compact" />
+  <main class="page-shell content-page" data-pagefind-ignore>
+    <div class="content-page__head">
+      <div><span class="section-kicker">TREE VIEW</span><h2>{articles.length} 篇文章</h2></div>
+      <p>展开目录节点即可直接跳转到文章。改变逻辑分类只需要修改文章元数据。</p>
+    </div>
+    <CatalogTree nodes={tree} />
+  </main>
+</BaseLayout>

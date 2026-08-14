@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  variant?: 'home' | 'article' | 'compact';
+}
+const { title, description, eyebrow, variant = 'compact' } = Astro.props;
+---
+
+<section class={`hero hero--${variant}`}>
+  <div class="hero__noise" aria-hidden="true"></div>
+  <div class="hero__inner">
+    {eyebrow && <div class="hero__eyebrow">{eyebrow}</div>}
+    <h1 class="hero__title">{title}</h1>
+    {description && <p class="hero__description">{description}</p>}
+    <slot />
+  </div>
+</section>

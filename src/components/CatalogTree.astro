@@ -1,0 +1,28 @@
+---
+import type { ArticleTreeNode } from '../lib/tree';
+import { articleUrl } from '../lib/articles';
+import { treeAnchor } from '../lib/paths';
+interface Props { nodes: ArticleTreeNode[]; depth?: number }
+const { nodes, depth = 0 } = Astro.props;
+---
+
+<ul class="catalog-tree" data-depth={depth}>
+  {nodes.map((node) => (
+    <li class="catalog-tree__node" id={treeAnchor(node.path)}>
+      <details open={depth < 1}>
+        <summary>
+          <span class="catalog-tree__name">{node.name}</span>
+          <span class="catalog-tree__count">{node.count}</span>
+        </summary>
+        {node.articles.length > 0 && (
+          <ul class="catalog-tree__articles">
+            {node.articles.map((article) => (
+              <li><a href={articleUrl(article)}>{article.data.title}</a></li>
+            ))}
+          </ul>
+        )}
+        {node.children.length > 0 && <Astro.self nodes={node.children} depth={depth + 1} />}
+      </details>
+    </li>
+  ))}
+</ul>

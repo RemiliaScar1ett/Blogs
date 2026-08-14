@@ -1,0 +1,67 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ArticleToc from '../../components/ArticleToc.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import TagBadge from '../../components/TagBadge.astro';
+import { formatDate, getArticles, plainSummary, relatedArticles, type ArticleEntry } from '../../lib/articles';
+
+export const getStaticPaths = (async () => {
+  const articles = await getArticles();
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article } }));
+}) satisfies GetStaticPaths;
+
+interface Props { article: ArticleEntry }
+const { article } = Astro.props;
+const { Content, headings } = await render(article);
+const summary = plainSummary(article);
+const all = await getArticles();
+const related = relatedArticles(article, all);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: article.data.title,
+  description: summary,
+  datePublished: article.data.date.toISOString(),
+  dateModified: (article.data.updated ?? article.data.date).toISOString(),
+  keywords: article.data.tags.join(', '),
+};
+---
+<BaseLayout title={article.data.title} description={summary}>
+  <span class="pagefind-metadata" aria-hidden="true" data-pagefind-meta="tree">{article.data.tree.join(' / ')}</span>
+  <span class="pagefind-metadata" aria-hidden="true" data-pagefind-meta="tags">{article.data.tags.join(' ')}</span>
+  {article.data.tags.map((tag) => (
+    <span class="pagefind-metadata" aria-hidden="true" data-pagefind-filter="tag">{tag}</span>
+  ))}
+  <span class="pagefind-metadata" aria-hidden="true" data-pagefind-filter="tree">{article.data.tree.join(' / ')}</span>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+  <Hero title={article.data.title} description={summary} eyebrow={article.data.tree.join(' / ')} variant="article">
+    <div class="article-hero-meta">
+      <span>发布 {formatDate(article.data.date)}</span>
+      {article.data.updated && <span>更新 {formatDate(article.data.updated)}</span>}
+    </div>
+  </Hero>
+
+  <div class="page-shell article-page">
+    <div class="article-main-column">
+      <Breadcrumbs tree={article.data.tree} />
+      <div class="article-tags" data-pagefind-ignore>
+        {article.data.tags.map((tag) => <TagBadge tag={tag} />)}
+      </div>
+      <main class="article-prose" data-pagefind-body>
+        <Content />
+      </main>
+      {related.length > 0 && (
+        <section class="related-section" data-pagefind-ignore>
+          <div class="section-kicker">RELATED</div>
+          <h2>相关文章</h2>
+          <div class="related-grid">{related.map((item) => <ArticleCard article={item} compact />)}</div>
+        </section>
+      )}
+    </div>
+    <ArticleToc headings={headings} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getArticles, groupByTag, type ArticleEntry } from '../../lib/articles';
+
+export const getStaticPaths = (async () => {
+  const tags = groupByTag(await getArticles());
+  return tags.map((tag) => ({ params: { tag: tag.slug }, props: { name: tag.name, articles: tag.articles } }));
+}) satisfies GetStaticPaths;
+
+interface Props { name: string; articles: ArticleEntry[] }
+const { name, articles } = Astro.props;
+---
+<BaseLayout title={`#${name}`}>
+  <Hero title={`#${name}`} description={`${articles.length} 篇相关文章`} eyebrow="TAG" variant="compact" />
+  <main class="page-shell list-page" data-pagefind-ignore>
+    {articles.map((article) => <ArticleCard article={article} />)}
+  </main>
+</BaseLayout>

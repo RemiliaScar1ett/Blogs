@@ -1,0 +1,40 @@
+---
+import { SITE } from '../config';
+import { withBase } from '../lib/paths';
+import ThemeToggle from './ThemeToggle.astro';
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => {
+  const full = withBase(href);
+  if (href === '/') return pathname === full;
+  return pathname.startsWith(full);
+};
+---
+
+<header class="site-header" data-pagefind-ignore>
+  <div class="site-header__inner">
+    <a class="site-brand" href={withBase('/')} aria-label={`${SITE.title} 首页`}>
+      <span class="site-brand__slash">/</span>
+      <span>{SITE.title}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航">
+      {SITE.nav.map((item) => (
+        <a class:list={{ active: isActive(item.href) }} href={withBase(item.href)}>{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="icon-button" type="button" data-open-search aria-label="搜索" title="搜索（Ctrl/⌘ + K）">⌕</button>
+      <ThemeToggle />
+      <details class="mobile-nav">
+        <summary aria-label="打开菜单">☰</summary>
+        <div class="mobile-nav__panel">
+          {SITE.nav.map((item) => (
+            <a class:list={{ active: isActive(item.href) }} href={withBase(item.href)}>{item.label}</a>
+          ))}
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

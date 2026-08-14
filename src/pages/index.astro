@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { SITE } from '../config';
+import { getArticles, groupByTag } from '../lib/articles';
+import { buildArticleTree } from '../lib/tree';
+import { treeAnchor, withBase } from '../lib/paths';
+
+const articles = await getArticles();
+const tags = groupByTag(articles);
+const tree = buildArticleTree(articles);
+const recent = articles.slice(0, 8);
+---
+<BaseLayout>
+  <Hero title={SITE.title} description={SITE.description} eyebrow={SITE.homeEyebrow} variant="home">
+    <div class="hero__stats">
+      <span>{articles.length} 篇文章</span>
+      <span>{tree.length} 个一级目录</span>
+      <span>{tags.length} 个标签</span>
+    </div>
+    <div class="hero__actions">
+      <a class="button button--light" href={withBase('/catalog/')}>浏览目录</a>
+      <button class="button button--ghost" type="button" data-open-search>全文搜索</button>
+    </div>
+  </Hero>
+
+  <main class="page-shell home-grid" data-pagefind-ignore>
+    <aside class="home-sidebar">
+      <div class="section-kicker">CATALOG</div>
+      <h2>逻辑目录</h2>
+      <p class="muted">目录来自每篇文章的 <code>tree</code> 元数据，与物理文件位置无关。</p>
+      <nav class="root-catalog">
+        {tree.map((node) => (
+          <a href={`${withBase('/catalog/')}#${treeAnchor(node.path)}`}>
+            <span>{node.name}</span><strong>{node.count}</strong>
+          </a>
+        ))}
+      </nav>
+      <a class="text-link" href={withBase('/catalog/')}>查看完整树形目录 →</a>
+    </aside>
+
+    <section class="home-feed">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">LATEST</div>
+          <h2>最近发布</h2>
+        </div>
+        <a class="text-link" href={withBase('/archive/')}>全部归档 →</a>
+      </div>
+      {recent.map((article) => <ArticleCard article={article} />)}
+    </section>
+  </main>
+</BaseLayout>

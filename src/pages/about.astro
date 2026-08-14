@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+<BaseLayout title="关于">
+  <Hero title="关于本站" description="一个由 Markdown Article Bundle 驱动的静态博客前端。" eyebrow="ABOUT" variant="compact" />
+  <main class="page-shell prose-page" data-pagefind-body>
+    <h2>内容模型</h2>
+    <p>每篇文章是一个独立文件夹，固定入口为 <code>blog.md</code>，图片、附件和其他依赖可以与正文放在同一 Article Bundle 中。</p>
+    <p>网站的树形目录、标签、发布时间与 URL 均来自 Markdown frontmatter，因此逻辑位置可以与磁盘位置完全不同。</p>
+    <h2>发布模型</h2>
+    <p>本地 <code>drafts/</code> 被 Git 忽略；发布脚本校验文章包后将整个目录移动到 <code>articles/</code>。GitHub Actions 随后执行 Astro 构建和 Pagefind 索引。</p>
+  </main>
+</BaseLayout>
