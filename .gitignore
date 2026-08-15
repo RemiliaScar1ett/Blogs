@@ -6,3 +6,9 @@ Thumbs.db
 
 # Local-only draft workspace. Never commit this directory.
 /drafts/
+old_mdfiles/
+
+# One-off legacy-blog migration tooling and its disposable working files.
+/migration_tools/
+/.migration_tmp/
+/env/
