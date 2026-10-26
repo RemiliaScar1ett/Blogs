@@ -1,6 +1,7 @@
 ---
 title: "这个博客如何组织内容"
 slug: "how-this-blog-is-organized"
+hidden: true
 tree:
   - "站点"
   - "架构"

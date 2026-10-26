@@ -1,6 +1,7 @@
 ---
 title: "树形目录、标签与搜索为什么应该分离"
 slug: "tree-tags-and-search"
+hidden: true
 tree:
   - "站点"
   - "内容管理"
