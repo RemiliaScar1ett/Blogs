@@ -13,9 +13,13 @@ export async function inspectSearch(directory: string, base: string, inspect: (i
     try { return new Response(await readFile(fileURLToPath(url))); }
     catch { return new Response('not found', { status: 404 }); }
   };
+  let index: any;
   try {
-    const index = await import(pathToFileURL(path.resolve(directory, 'pagefind/pagefind.js')).href);
+    index = await import(pathToFileURL(path.resolve(directory, 'pagefind/pagefind.js')).href);
     await index.options({ baseUrl: base });
     await inspect(index);
-  } finally { globalThis.fetch = previous; }
+  } finally {
+    try { await index?.destroy(); }
+    finally { globalThis.fetch = previous; }
+  }
 }
