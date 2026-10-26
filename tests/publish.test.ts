@@ -20,7 +20,7 @@ async function fixture(t: Parameters<typeof workspace>[0]) {
   await git(root, ['config', 'user.name', 'Publication Test']);
   await git(root, ['config', 'user.email', 'test@example.invalid']);
   await git(root, ['config', 'commit.gpgsign', 'false']);
-  await writeFile(path.join(root, '.gitignore'), '.cache/\ndrafts/\nnode_modules/\n');
+  await writeFile(path.join(root, '.gitignore'), '.cache/\ndrafts/\nnode_modules\n');
   await writeFile(path.join(root, 'unrelated.txt'), 'unchanged');
   await git(root, ['add', '.']); await git(root, ['commit', '-m', 'initial']);
   await git(root, ['remote', 'add', 'origin', remote]); await git(root, ['push', '-u', 'origin', 'main']);

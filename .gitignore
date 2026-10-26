@@ -1,5 +1,5 @@
 # Dependencies, generated site files and local verification state.
-node_modules/
+node_modules
 dist/
 .astro/
 .cache/

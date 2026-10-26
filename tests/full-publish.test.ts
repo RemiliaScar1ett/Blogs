@@ -23,13 +23,15 @@ test('真实文章通过生产构建完成首次发布和更新（本地 Git 远
     return { html: '<h2 id="custom-format">自定义正文</h2>', headings: [{ depth: 2, slug: 'custom-format', text: '自定义正文' }], summaryText: '独立格式摘要', searchText: 'CustomFormatUniqueToken', diagnostics: [], assets: [{ kind: 'style', outputPath: '_content/custom-format.css', contents: 'h2{color:blue}', entrypoint: true }] };
   } });`));
   const { publishArticle } = await import(pathToFileURL(path.join(root, 'src/publishing/publish.ts')).href);
-  await writeFile(path.join(root, '.gitignore'), 'node_modules/\ndrafts/\n.cache/\n.astro/\ndist/\n');
+  await writeFile(path.join(root, '.gitignore'), 'node_modules\ndrafts/\n.cache/\n.astro/\ndist/\n');
   await git(remote, ['init', '--bare', '--initial-branch=main']);
   await git(root, ['init', '--initial-branch=main']);
   await git(root, ['config', 'user.name', 'Production Test']);
   await git(root, ['config', 'user.email', 'production@example.invalid']);
   await git(root, ['config', 'commit.gpgsign', 'false']);
-  await git(root, ['add', '.']); await git(root, ['commit', '-m', 'site']);
+  await git(root, ['add', '.']);
+  assert.equal((await git(root, ['ls-files', '--', 'node_modules'])).trim(), '', 'Dependency links must remain outside Git');
+  await git(root, ['commit', '-m', 'site']);
   await git(root, ['remote', 'add', 'origin', remote]); await git(root, ['push', '-u', 'origin', 'main']);
   const source = (await readArticles(process.cwd())).find((a) => a.metadata.title === '莫比乌斯函数')!;
   const slug = source.metadata.slug;
