@@ -4,8 +4,10 @@ slug: legacy-081e64069882
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线性基
 date: 2026-08-15
+uid: 3b0c7efe-b6cf-4821-9619-e867f43605b6
+dateKind: collected
 ---
 ## P3857 [TJOI2008]彩灯
 

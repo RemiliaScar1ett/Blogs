@@ -4,8 +4,10 @@ slug: legacy-9d9ea60791da
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 平衡树
 date: 2026-08-15
+uid: 5c2759bc-b53c-4b3d-9115-29ce60ea4f54
+dateKind: collected
 ---
 # P3165 [CQOI2014]排序机械臂
 

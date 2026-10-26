@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数据结构"
 tags:
-  - "旧文迁移"
+  - 数据结构
+  - 线段树
 date: 2026-08-15
+uid: de1b24ae-35f7-4ecf-9d94-9cea4c39ba75
+dateKind: collected
 ---
 # 线段树合并
 

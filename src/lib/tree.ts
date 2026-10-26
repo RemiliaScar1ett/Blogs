@@ -40,7 +40,7 @@ export function buildArticleTree(articles: ArticleEntry[]): ArticleTreeNode[] {
     const children = [...node.children.values()]
       .map(freeze)
       .sort((a, b) => a.name.localeCompare(b.name, 'zh-CN'));
-    const own = [...node.articles].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    const own = [...node.articles].sort((a, b) => b.data.date.localeCompare(a.data.date) || a.id.localeCompare(b.id));
     const count = own.length + children.reduce((sum, child) => sum + child.count, 0);
     return { name: node.name, path: node.path, children, articles: own, count };
   };

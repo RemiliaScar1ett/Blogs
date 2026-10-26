@@ -5,8 +5,12 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 最短路
+  - 动态规划
 date: 2026-08-15
+uid: 385bcc8a-08c2-4f6b-9a62-a7d2e6de9a59
+dateKind: collected
 ---
 ## 同余最短路
 

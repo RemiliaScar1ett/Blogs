@@ -4,8 +4,10 @@ slug: legacy-20344708e25c
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 贪心
 date: 2026-08-15
+uid: 96297914-ec29-43f0-9580-95ce3bcd9a51
+dateKind: collected
 ---
 ##  P5687 [CSP-S2019 江西] 网格图
 

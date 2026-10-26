@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
 date: 2026-08-15
+uid: 17c3bfaa-be45-4c22-9b0c-0349e2e7a429
+dateKind: collected
 ---
 ## 环图
 

@@ -19,7 +19,7 @@
       const current = document.documentElement.dataset.theme;
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.dataset.theme = next;
-      localStorage.setItem('theme', next);
+      try { localStorage.setItem('theme', next); } catch {}
       syncThemeButtons();
     });
   });

@@ -1,19 +1,17 @@
 ---
-interface Props { label?: string }
-const { label = '搜索标题、正文、标签或目录词' } = Astro.props;
-const isDev = import.meta.env.DEV;
+import { withBase } from '../lib/paths';
+interface Props { label?: string; id?: string; page?: boolean }
+const { label = '搜索标题、题号或关键词', id = 'modal-search-input', page = false } = Astro.props;
 ---
 
-<div class="search-box">
-  {isDev ? (
-    <div class="search-box__dev">
-      <strong>开发模式未生成搜索索引。</strong>
-      <span>运行 <code>npm run build</code> 后再用 <code>npm run preview</code> 查看 Pagefind 搜索。</span>
-    </div>
-  ) : (
-    <>
-      <label class="sr-only" for="pagefind-search">{label}</label>
-      <pagefind-searchbox id="pagefind-search"></pagefind-searchbox>
-    </>
-  )}
+<div class="search-box" data-search-box data-search-page={String(page)} data-dev={String(import.meta.env.DEV)} data-bundle={withBase('/pagefind/pagefind.js')} data-fallback={withBase('/articles.json')}>
+  <form role="search">
+    <label class="sr-only" for={id}>{label}</label>
+    <div class="search-input-row"><input id={id} name="q" type="search" placeholder={label} autocomplete="off" aria-describedby={`${id}-status`} /><button class="button" type="submit">搜索</button></div>
+  </form>
+  <p id={`${id}-status`} class="search-status" data-search-status role="status" aria-live="polite">输入标题、题号或关键词。</p>
+  <ol class="search-results" aria-label="搜索结果"></ol>
+  <button class="button search-more" type="button" data-search-more hidden>显示更多</button>
+  <noscript><p>全文搜索需要 JavaScript，你也可以<a href={withBase('/catalog/')}>浏览文章目录</a>。</p></noscript>
 </div>
+<script>import '../client/search';</script>

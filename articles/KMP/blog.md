@@ -2,11 +2,13 @@
 title: "KMP"
 slug: legacy-759369661c55
 tree:
-  - "笔记"
-  - "其他算法"
+  - 笔记
+  - 字符串
 tags:
-  - "旧文迁移"
+  - 字符串
 date: 2026-08-15
+uid: d417d8e1-dfa4-470c-a644-0c2ab41c2d51
+dateKind: collected
 ---
 ## KMP字符串匹配
 

@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数据结构"
 tags:
-  - "旧文迁移"
+  - 数据结构
+  - 并查集
 date: 2026-08-15
+uid: debdd000-95e3-4ad7-aad8-52f221c07fdb
+dateKind: collected
 ---
 ## 并查集
 

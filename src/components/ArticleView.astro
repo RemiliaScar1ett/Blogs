@@ -1,0 +1,36 @@
+---
+import type { ArticleRecord } from '../core/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from './Hero.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import ArticleToc from './ArticleToc.astro';
+import ArticleCard from './ArticleCard.astro';
+import TagBadge from './TagBadge.astro';
+import ReadingTools from './ReadingTools.astro';
+import { formatDate, dateLabel } from '../lib/articles';
+interface Props { article: ArticleRecord; related?: ArticleRecord[]; draft?: boolean }
+const { article, related = [], draft = false } = Astro.props;
+---
+<BaseLayout title={article.data.title} description={article.summary} assets={article.rendered.assets} noindex={draft}>
+  {draft && <div class="draft-notice" role="status">本地草稿预览 · 尚未发布</div>}
+  <Hero title={article.data.title} description={article.summary} eyebrow={article.data.tree.join(' / ')} variant="article">
+    <div class="article-hero-meta">
+      {!draft && <span>{dateLabel(article)} <time datetime={article.data.publishedAt ?? article.data.date}>{formatDate(article.data.date)}</time></span>}
+      {article.data.updated && <span>更新 {formatDate(article.data.updated)}</span>}
+    </div>
+  </Hero>
+  <div class="page-shell article-page">
+    <div class="article-main-column">
+      <Breadcrumbs tree={article.data.tree} />
+      <div class="article-tags">{article.data.tags.map((tag) => <TagBadge tag={tag} />)}</div>
+      <ArticleToc headings={article.rendered.headings} mobile />
+      <main id="main-content" class="article-prose" set:html={article.rendered.html} />
+      {related.length > 0 && <section class="related-section">
+        <h2>继续阅读</h2>
+        <div class="related-grid">{related.map((item) => <ArticleCard article={item} compact />)}</div>
+      </section>}
+    </div>
+    <ArticleToc headings={article.rendered.headings} />
+  </div>
+  <ReadingTools />
+</BaseLayout>

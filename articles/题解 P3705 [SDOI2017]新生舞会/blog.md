@@ -4,8 +4,10 @@ slug: legacy-bfc2ebdef5a5
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 网络流
 date: 2026-08-15
+uid: a5a83b8f-997e-41c9-9f65-a733950e1ad7
+dateKind: collected
 ---
 ## P3705 [SDOI2017]新生舞会
 

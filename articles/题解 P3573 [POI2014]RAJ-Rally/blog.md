@@ -4,8 +4,11 @@ slug: legacy-eae566e07799
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
+  - 动态规划
 date: 2026-08-15
+uid: 5dd424e9-538d-4d98-be0f-5e08b72fea02
+dateKind: collected
 ---
 ## P3573 [POI2014]RAJ-Rally
 

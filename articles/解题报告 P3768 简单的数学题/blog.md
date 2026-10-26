@@ -4,8 +4,11 @@ slug: legacy-d8e11421b011
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 莫比乌斯反演
+  - 分块
 date: 2026-08-15
+uid: 7b11fcaf-7623-4614-b2ea-f274ed746be6
+dateKind: collected
 ---
 # P3768 简单的数学题
 

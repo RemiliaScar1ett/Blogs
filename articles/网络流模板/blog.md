@@ -6,8 +6,11 @@ tree:
   - "图论"
   - "网络流"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 网络流
 date: 2026-08-15
+uid: d50b70ce-c643-48a8-ab64-3f52761c276b
+dateKind: collected
 ---
 ## 网络流各类算法的模板
 

@@ -5,8 +5,12 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - 筛法
+  - 同余方程
 date: 2026-08-15
+uid: 03a5dcda-e041-459e-b6e0-7d1e1c291409
+dateKind: collected
 ---
 ## 基本的质数筛法
 

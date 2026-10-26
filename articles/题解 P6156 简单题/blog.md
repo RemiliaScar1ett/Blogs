@@ -4,8 +4,10 @@ slug: legacy-1c54a6783fdb
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 分块
 date: 2026-08-15
+uid: 592ce67b-feaf-409e-958b-d8199d670137
+dateKind: collected
 ---
 ## P6156 简单题
 

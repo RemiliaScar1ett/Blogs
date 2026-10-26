@@ -1,7 +1,7 @@
 export const SITE = {
   title: 'Blogs',
   description: '技术笔记、研究随笔与长期归档',
-  author: 'Your Name',
+  author: 'Blogs',
   homeEyebrow: 'NOTES · RESEARCH · ARCHIVE',
   nav: [
     { label: '首页', href: '/' },

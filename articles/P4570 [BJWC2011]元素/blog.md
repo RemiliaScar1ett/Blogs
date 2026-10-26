@@ -4,8 +4,10 @@ slug: legacy-22fae6150b42
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线性基
 date: 2026-08-15
+uid: cf01f538-46da-47c5-b33e-474aaf21eb5f
+dateKind: collected
 ---
 ## P4570 [BJWC2011]元素
 

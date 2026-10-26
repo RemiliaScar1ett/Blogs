@@ -5,8 +5,12 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 最短路
+  - 贪心
 date: 2026-08-15
+uid: c8b172d1-ab0d-48a2-8f65-f6fff0014ef3
+dateKind: collected
 ---
 ## 差分约束
 

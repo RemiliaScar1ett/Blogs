@@ -4,8 +4,10 @@ slug: legacy-df46e21d44a1
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
 date: 2026-08-15
+uid: 320f9da4-c27d-437b-8b48-5c1d0f18bdee
+dateKind: collected
 ---
 ##  P2572 [SCOI2010] 序列操作
 

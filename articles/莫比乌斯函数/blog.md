@@ -5,8 +5,12 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - 莫比乌斯反演
+  - 分块
 date: 2026-08-15
+uid: 13cfcaaf-af88-48bd-a1c4-496b7f08f0f2
+dateKind: collected
 ---
 ## 莫比乌斯函数(Möbius)
 
@@ -32,11 +36,13 @@ $$
 
 -  **$n\ne 0$时，$n$ 的所有因子的莫比乌斯函数值和为 $0$**
 
-    $$\sum_{d|n}\mu (x)=
+    $$
+    \sum_{d|n}\mu (x)=
     \begin{cases}
     1 & n=1\\
     0 & n>1
-    \end{cases}$$
+    \end{cases}
+    $$
 
     证明：
 
@@ -47,13 +53,13 @@ $$
 
         $$\because \mu (d) \ne 0 \Rightarrow d=p_1p_2 p_3 \cdots p_t$$
 
-        $$\text{故质因子个数为r的因子只有$C_k^r$个}$$
+        $$\text{故质因子个数为r的因子只有}C_k^r\text{个}$$
 
         $$\therefore \sum_{d|n}\mu (x)=C_k^0-C_k^1+C_k^2+\cdots+(-1)^kC_k^k=\sum_{i=0}^k(-1)^iC_k^i$$
 
         $$\because (x+y)^n=\sum_{i=0}^nC_n^ix^iy^{n-i}  \text{(二项式定理)}$$
 
-        $$\text{将$x=1,y=-1$代入得证：} \sum_{i=0}^n(-1)^nC_n^i=0$$
+        $$\text{将}x=1,y=-1\text{代入得证：} \sum_{i=0}^n(-1)^nC_n^i=0$$
 
 - **莫比乌斯函数是积性函数**
 
@@ -158,19 +164,19 @@ $$Ans=\sum_{i=1}^{min(a^{\prime},b^{\prime})}\lfloor\frac{a^{\prime}}{i}\rfloor\
 
  $$\therefore \lfloor \frac{a}{g(x)} \rfloor \geq \lfloor \frac{a}{x} \rfloor $$
 
- $$\text{故 $\lfloor \frac{a}{g(x)} \rfloor = \lfloor \frac{a}{x} \rfloor$ 成立}$$
+ $$\text{故 }\lfloor \frac{a}{g(x)} \rfloor = \lfloor \frac{a}{x} \rfloor\text{ 成立}$$
 
- $$\text{设 $a=kx+r , 0\leq r \leq x$ (带余除法)}$$
+ $$\text{设 }a=kx+r , 0\leq r \leq x\text{ (带余除法)}$$
 
- $$\text{代入 $\lfloor\frac{a}{x}\rfloor > \lfloor\frac{a}{g(x)+1}\rfloor$ 得：} k>\Big\lfloor\frac{a}{\lfloor\frac{a}{k}\rfloor+1}\Big\rfloor$$
+ $$\text{代入 }\lfloor\frac{a}{x}\rfloor > \lfloor\frac{a}{g(x)+1}\rfloor\text{ 得：} k>\Big\lfloor\frac{a}{\lfloor\frac{a}{k}\rfloor+1}\Big\rfloor$$
 
  $$k(\lfloor\frac{a}{k}\rfloor+1)>a$$
 
- $$\text{再设$a=pk+q,0\leq q < k$}$$
+ $$\text{再设}a=pk+q,0\leq q < k\text{}$$
 
  $$\text{代入得：} k(p+1)>pk+q\Rightarrow k>q,\text{满足要求}$$
 
- $$\text{故 $\lfloor\frac{a}{x}\rfloor > \lfloor\frac{a}{g(x)+1}\rfloor$ 成立}$$
+ $$\text{故 }\lfloor\frac{a}{x}\rfloor > \lfloor\frac{a}{g(x)+1}\rfloor\text{ 成立}$$
 
  有了这个结果，整个问题就简单多了。
 

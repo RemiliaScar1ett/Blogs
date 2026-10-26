@@ -1,18 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
-import { articleUrl, formatDate, getArticles } from '../../lib/articles';
+import { articleUrl, formatDate, getArticles, dateLabel } from '../../lib/articles';
 const articles = await getArticles();
 const years = new Map<number, typeof articles>();
 for (const article of articles) {
-  const year = article.data.date.getFullYear();
+  const year = Number(article.data.date.slice(0, 4));
   const list = years.get(year) ?? [];
   list.push(article);
   years.set(year, list);
 }
 ---
 <BaseLayout title="归档">
-  <Hero title="时间归档" description="按发布日期查看所有已发布内容。" eyebrow="ARCHIVE" variant="compact" />
+  <Hero title="时间归档" description="按发布或收录时间浏览文章。" eyebrow="ARCHIVE" variant="compact" />
   <main class="page-shell content-page archive" data-pagefind-ignore>
     {[...years.entries()].map(([year, items]) => (
       <section class="archive-year">
@@ -20,7 +20,7 @@ for (const article of articles) {
         <div class="archive-list">
           {items.map((article) => (
             <a href={articleUrl(article)}>
-              <time>{formatDate(article.data.date)}</time>
+              <time datetime={article.data.date} title={dateLabel(article)}>{formatDate(article.data.date)}</time>
               <span>{article.data.title}</span>
               <small>{article.data.tree.join(' / ')}</small>
             </a>

@@ -4,8 +4,10 @@ slug: legacy-67bdafde594d
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
 date: 2026-08-15
+uid: aca4a9b1-d4af-4645-bc9c-e29bf121600a
+dateKind: collected
 ---
 ## P3168 [CQOI2015]任务查询系统
 

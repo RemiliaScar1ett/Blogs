@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数据结构"
 tags:
-  - "旧文迁移"
+  - 数据结构
+  - 动态规划
 date: 2026-08-15
+uid: dc44bb19-682a-4fc4-b006-f108a85c94b4
+dateKind: collected
 ---
 ## ST表
 

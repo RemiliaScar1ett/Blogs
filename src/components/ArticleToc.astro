@@ -1,17 +1,14 @@
 ---
 interface Heading { depth: number; slug: string; text: string }
-interface Props { headings: Heading[] }
-const { headings } = Astro.props;
-const visible = headings.filter((heading) => heading.depth >= 2 && heading.depth <= 4);
+interface Props { headings: Heading[]; mobile?: boolean }
+const { headings, mobile = false } = Astro.props;
+const visible = headings.filter((h) => h.depth >= 2 && h.depth <= 4);
 ---
-
-{visible.length > 0 && (
-  <aside class="article-toc" aria-label="文章目录" data-pagefind-ignore>
-    <div class="article-toc__title">目录</div>
-    <nav>
-      {visible.map((heading) => (
-        <a href={`#${heading.slug}`} style={`--toc-depth:${heading.depth - 2}`}>{heading.text}</a>
-      ))}
-    </nav>
-  </aside>
+{visible.length > 0 && (mobile ?
+  <details class="article-toc-mobile"><summary>本篇目录</summary><nav aria-label="文章目录">
+    {visible.map((h) => <a href={`#${h.slug}`} style={`--toc-depth:${h.depth - 2}`}>{h.text}</a>)}
+  </nav></details> :
+  <aside class="article-toc" aria-label="文章目录"><div class="article-toc__title">本篇目录</div><nav>
+    {visible.map((h) => <a href={`#${h.slug}`} style={`--toc-depth:${h.depth - 2}`}>{h.text}</a>)}
+  </nav></aside>
 )}

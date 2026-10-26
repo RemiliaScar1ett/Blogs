@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "计算几何"
 tags:
-  - "旧文迁移"
+  - 计算几何
+  - 线段树
 date: 2026-08-15
+uid: 14bbc897-ac03-40f9-aac8-3ee2974ac7bf
+dateKind: collected
 ---
 ## 扫描线
 

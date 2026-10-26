@@ -4,8 +4,10 @@ slug: legacy-b27e2fef65a4
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 分块
 date: 2026-08-15
+uid: fda63f8c-4dcf-447f-a769-013c8b2e96e7
+dateKind: collected
 ---
 # P3327 [SDOI2015]约数个数和
 

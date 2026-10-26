@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 最短路
 date: 2026-08-15
+uid: 823e40eb-864e-40b5-bb9f-9f4a59f45e52
+dateKind: collected
 ---
 ## 最短路图
 

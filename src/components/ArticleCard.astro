@@ -1,6 +1,6 @@
 ---
 import type { ArticleEntry } from '../lib/articles';
-import { articleUrl, formatDate, plainSummary } from '../lib/articles';
+import { articleUrl, formatDate, plainSummary, dateLabel } from '../lib/articles';
 import TagBadge from './TagBadge.astro';
 interface Props { article: ArticleEntry; compact?: boolean }
 const { article, compact = false } = Astro.props;
@@ -10,7 +10,7 @@ const { article, compact = false } = Astro.props;
   <div class="article-card__path">{article.data.tree.join(' / ')}</div>
   <h2 class="article-card__title"><a href={articleUrl(article)}>{article.data.title}</a></h2>
   <div class="article-card__meta">
-    <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date)}</time>
+    <time datetime={article.data.publishedAt ?? article.data.date}>{dateLabel(article)} {formatDate(article.data.date)}</time>
     {article.data.updated && <span>更新 {formatDate(article.data.updated)}</span>}
   </div>
   {!compact && <p class="article-card__summary">{plainSummary(article)}</p>}

@@ -4,8 +4,10 @@ slug: legacy-17d1e4be789f
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
 date: 2026-08-15
+uid: e67bd0be-3380-43a4-93e1-7b3ca64b0af8
+dateKind: collected
 ---
 # P4588 [TJOI2018]数学计算
 

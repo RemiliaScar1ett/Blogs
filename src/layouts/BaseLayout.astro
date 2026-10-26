@@ -3,7 +3,8 @@ import '../styles/tokens.css';
 import '../styles/global.css';
 import '../styles/components.css';
 import '../styles/article.css';
-import 'katex/dist/katex.min.css';
+import type { RenderAsset } from '../core/types';
+import { withBase } from '../lib/paths';
 import { SITE } from '../config';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -14,12 +15,12 @@ interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  assets?: RenderAsset[];
 }
-const { title, description = SITE.description, noindex = false } = Astro.props;
+const { title, description = SITE.description, noindex = false, assets = [] } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
-const pagefindBase = import.meta.env.BASE_URL;
-const prod = import.meta.env.PROD;
+const entrypoints = [...new Map(assets.filter((a) => a.entrypoint).map((a) => [a.outputPath, a])).values()];
 ---
 <!doctype html>
 <html lang="zh-CN" data-theme="light">
@@ -37,18 +38,13 @@ const prod = import.meta.env.PROD;
     <title>{pageTitle}</title>
     <script is:inline>
       (() => {
-        const saved = localStorage.getItem('theme');
+        let saved;
+        try { saved = localStorage.getItem('theme'); } catch {}
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = saved || (systemDark ? 'dark' : 'light');
+        document.documentElement.dataset.theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
       })();
     </script>
-    {prod && (
-      <>
-        <link rel="stylesheet" href={`${pagefindBase}pagefind/pagefind-component-ui.css`} />
-        <pagefind-config base-url={pagefindBase} bundle-path={`${pagefindBase}pagefind/`}></pagefind-config>
-        <script type="module" src={`${pagefindBase}pagefind/pagefind-component-ui.js`}></script>
-      </>
-    )}
+    {entrypoints.filter((a) => a.kind === 'style').map((a) => <link rel="stylesheet" href={withBase(a.outputPath)} />)}
   </head>
   <body>
     <SiteHeader />
@@ -56,5 +52,6 @@ const prod = import.meta.env.PROD;
     <SiteFooter />
     <SearchModal />
     <BackToTop />
+    {entrypoints.filter((a) => a.kind === 'script').map((a) => <script is:inline type="module" src={withBase(a.outputPath)}></script>)}
   </body>
 </html>

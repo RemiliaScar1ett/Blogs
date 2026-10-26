@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数据结构"
 tags:
-  - "旧文迁移"
+  - 数据结构
+  - 平衡树
 date: 2026-08-15
+uid: a836c50a-c696-41fb-a36b-72e8ff97fe6d
+dateKind: collected
 ---
 ## Splay
 

@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "其他算法"
 tags:
-  - "旧文迁移"
+  - 平衡树
 date: 2026-08-15
+uid: 68a7f278-6cb1-446d-97d2-cb953f7e0dbd
+dateKind: collected
 ---
 ## `__gnu__pbds` 库
 

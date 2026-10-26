@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
 date: 2026-08-15
+uid: 5aea3546-ea1b-4eb7-a6ea-17b392750304
+dateKind: collected
 ---
 
 惊奇的发现自己还没系统学这个东西，赶紧补课。

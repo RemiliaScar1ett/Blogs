@@ -7,7 +7,7 @@ const articles = await getArticles();
 const tags = groupByTag(articles);
 ---
 <BaseLayout title="标签">
-  <Hero title="标签" description="标签是与树形目录正交的多值分类。" eyebrow="TAGS" variant="compact" />
+  <Hero title="主题标签" description="发现讨论同一方法或问题的文章。" eyebrow="TAGS" variant="compact" />
   <main class="page-shell content-page" data-pagefind-ignore>
     <div class="tag-grid">
       {tags.map((tag) => (

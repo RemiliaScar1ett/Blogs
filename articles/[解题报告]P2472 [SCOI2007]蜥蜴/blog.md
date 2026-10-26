@@ -4,8 +4,10 @@ slug: legacy-bd427143a1f5
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 网络流
 date: 2026-08-15
+uid: b2145e60-65cc-4b13-8109-8d9dded2a152
+dateKind: collected
 ---
 ## P2472 [SCOI2007]蜥蜴
 

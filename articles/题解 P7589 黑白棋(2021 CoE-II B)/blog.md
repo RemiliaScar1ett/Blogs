@@ -4,8 +4,10 @@ slug: legacy-7d211baa2540
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 博弈论
 date: 2026-08-15
+uid: 123f1ac3-1581-4591-a06e-4137d36fe99f
+dateKind: collected
 ---
 ## P7589 黑白棋（2021 CoE-II B）
 

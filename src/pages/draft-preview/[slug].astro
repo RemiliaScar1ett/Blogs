@@ -1,0 +1,11 @@
+---
+import ArticleView from '../../components/ArticleView.astro';
+import { loadDraft } from '../../core/repository';
+export async function getStaticPaths() {
+  const slug = import.meta.env.DEV ? process.env.DRAFT_PREVIEW_SLUG : undefined;
+  return slug ? [{ params: { slug } }] : [];
+}
+if (!import.meta.env.DEV || !process.env.DRAFT_PREVIEW_SLUG) throw new Error('草稿仅能通过本地预览命令访问');
+const article = await loadDraft(process.cwd(), Astro.params.slug!, import.meta.env.BASE_URL);
+---
+<ArticleView article={article} draft />

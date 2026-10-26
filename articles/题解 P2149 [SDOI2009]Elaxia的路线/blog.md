@@ -4,8 +4,11 @@ slug: legacy-7d3dcc2a421c
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 最短路
+  - 动态规划
 date: 2026-08-15
+uid: 9373efea-41bb-49bc-b6ad-eab2a8ad16cb
+dateKind: collected
 ---
 ## P2149 [SDOI2009]Elaxia的路线
 

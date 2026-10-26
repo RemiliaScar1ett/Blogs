@@ -5,26 +5,40 @@
   "type": "module",
   "packageManager": "npm@10.9.2",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && node scripts/copy_bundle_assets.mjs && pagefind --site dist",
+    "build": "node scripts/build.ts",
     "preview": "astro preview",
-    "check": "astro check",
-    "publish": "python scripts/publish.py",
-    "new": "python scripts/new_draft.py"
+    "check": "node scripts/validate.ts && astro check",
+    "publish": "node scripts/cli.ts publish",
+    "new": "node scripts/cli.ts new",
+    "test": "node --test tests/*.test.ts",
+    "test:output": "node scripts/verify-output.ts",
+    "preview:draft": "node scripts/cli.ts preview"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.2",
     "astro": "7.1.6",
+    "github-slugger": "2.0.0",
     "katex": "0.18.1",
     "pagefind": "1.5.2",
+    "parse5": "7.3.0",
     "rehype-katex": "7.0.1",
-    "remark-math": "6.0.0"
+    "rehype-raw": "7.0.0",
+    "rehype-stringify": "10.0.1",
+    "remark-gfm": "4.0.1",
+    "remark-math": "6.0.0",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.2",
+    "unified": "11.0.5",
+    "yaml": "2.9.0",
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@types/node": "^24.19.2",
     "typescript": "^6.0.0"
   },
   "allowScripts": {

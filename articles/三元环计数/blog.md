@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
 date: 2026-08-15
+uid: 132e1756-1104-4e2b-954e-f2a01d400d2d
+dateKind: collected
 ---
 ## 无向图三元环计数
 

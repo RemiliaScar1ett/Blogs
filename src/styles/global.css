@@ -44,3 +44,7 @@ img { max-width: 100%; }
   .content-page__head { grid-template-columns: 1fr; gap: 12px; }
   .prose-page { padding: 24px 20px; }
 }
+
+:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+@media (max-width: 860px) { .home-sidebar { order: 2; } }

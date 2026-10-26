@@ -1,6 +1,18 @@
+# Dependencies, generated site files and local verification state.
 node_modules/
 dist/
 .astro/
+.cache/
+/coverage/
+/test-results/
+/tmp/
+/temp/
+/*.log
+/*.tmp
+/*.bak
+
+# Reproducible tests in tests/ are source files. Their disposable repositories,
+# candidate builds and logs belong under .cache/ and are never committed.
 .DS_Store
 Thumbs.db
 

@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - 组合数学
 date: 2026-08-15
+uid: a2ebce65-5d79-4e74-af24-e793eada5feb
+dateKind: collected
 ---
 ### 前置知识
 

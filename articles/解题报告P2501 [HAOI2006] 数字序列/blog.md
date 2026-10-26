@@ -4,8 +4,10 @@ slug: legacy-5275991e2fc0
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 动态规划
 date: 2026-08-15
+uid: eaf09ff0-d8ed-40a3-9e7b-477e87b81396
+dateKind: collected
 ---
 
 ###  P2501 [HAOI2006] 数字序列

@@ -6,8 +6,12 @@ tree:
   - "图论"
   - "网络流"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 网络流
+  - 最短路
 date: 2026-08-15
+uid: c3c6cd88-ac36-4c2a-86dd-599b402dde7f
+dateKind: collected
 ---
 ## 费用流的基本概念
 

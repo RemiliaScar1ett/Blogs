@@ -4,8 +4,11 @@ slug: legacy-8f8aa8dab9bb
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 位运算
+  - 回文串
 date: 2026-08-15
+uid: 5a7b7c85-ecf5-4371-b014-6c19c438aaad
+dateKind: collected
 ---
 ## XOR Palindromes
 

@@ -1,7 +1,0 @@
-site: dist
-output_path: dist/pagefind
-exclude_selectors:
-  - "[data-pagefind-ignore]"
-  - ".article-toc"
-  - ".site-header"
-  - ".site-footer"

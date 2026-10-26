@@ -4,8 +4,10 @@ slug: legacy-520b97d99d9c
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 贪心
 date: 2026-08-15
+uid: fb892fc9-ef82-48d5-89b6-57607cae300d
+dateKind: collected
 ---
 ## P7287 「EZEC-5」魔法
 

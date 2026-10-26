@@ -4,8 +4,10 @@ slug: legacy-3450a3220975
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
 date: 2026-08-15
+uid: 99461d06-0dcf-4e69-a59f-d6d85ee8a397
+dateKind: collected
 ---
 ## P2839 [国家集训队]middle
 

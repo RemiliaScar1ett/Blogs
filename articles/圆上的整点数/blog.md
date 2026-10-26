@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
 date: 2026-08-15
+uid: b6a81e4b-df91-4aed-ae4a-28d956b96903
+dateKind: collected
 ---
 ## P2508 [HAOI2008]圆上的整点
 

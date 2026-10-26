@@ -2,11 +2,15 @@
 title: "AC自动机"
 slug: legacy-6add9bc2bcc5
 tree:
-  - "笔记"
-  - "数据结构"
+  - 笔记
+  - 字符串
 tags:
-  - "旧文迁移"
+  - 字符串
+  - AC自动机
+  - 字典树
 date: 2026-08-15
+uid: 6bec5fc3-cb06-45c9-99b6-3ced8e043394
+dateKind: collected
 ---
 ## AC自动机
 

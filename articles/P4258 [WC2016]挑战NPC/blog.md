@@ -4,8 +4,10 @@ slug: legacy-2188722982c3
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 图匹配
 date: 2026-08-15
+uid: 83f27185-0793-4bfa-a6b1-a70d35070141
+dateKind: collected
 ---
 ##P4258 [WC2016]挑战NPC
 

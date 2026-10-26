@@ -3,6 +3,7 @@ name: Deploy blog to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -39,20 +40,42 @@ jobs:
           echo "SITE_URL=https://${GITHUB_REPOSITORY_OWNER}.github.io" >> "$GITHUB_ENV"
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
+
+      - name: Test content, renderer extension and Git publication
+        run: npm test
+
+      - name: Verify root deployment
+        env:
+          BASE_PATH: /
+        run: |
+          npm run build
+          npm run test:output
+
+      - name: Verify repository subpath deployment
+        env:
+          BASE_PATH: /acceptance-subpath
+        run: |
+          npm run build
+          npm run test:output
 
       - name: Build Astro + Pagefind
-        run: npm run build
+        run: |
+          npm run build
+          npm run test:output
 
       - name: Configure Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

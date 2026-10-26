@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - 组合数学
 date: 2026-08-15
+uid: aa39c962-ea4a-4acb-af82-5aa5be22133a
+dateKind: collected
 ---
 ## ExLucas 定理
 
@@ -24,13 +27,15 @@ $p$ 不是质数了不能套 Lucas 了。
 
 套路的，我们将要求的东西分解成：
 
-$$\begin{cases}
+$$
+\begin{cases}
 C_n^m\bmod p_1^{k_1}\\
 C_n^m\bmod p_2^{k_2}\\
 C_n^m\bmod p_3^{k_3}\\
 \qquad \vdots\\
 C_n^m\bmod p_i^{k_i}
-\end{cases}$$
+\end{cases}
+$$
 
 最后用 CRT 合并即可。
 

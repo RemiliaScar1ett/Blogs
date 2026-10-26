@@ -4,8 +4,10 @@ slug: legacy-eab367f12c99
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
 date: 2026-08-15
+uid: 7ef008c2-219d-4592-8e6c-df72c4d92b88
+dateKind: collected
 ---
 ## P4587 [FJOI2016]神秘数
 

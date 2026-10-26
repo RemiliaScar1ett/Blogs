@@ -4,8 +4,10 @@ slug: legacy-1b249b83ccf6
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 分块
 date: 2026-08-15
+uid: 2a983a42-7b2b-4601-b98e-907de6e94316
+dateKind: collected
 ---
 ## P3704 [SDOI2017] 数字表格
 

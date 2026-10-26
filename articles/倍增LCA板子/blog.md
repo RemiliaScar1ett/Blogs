@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 树上算法
 date: 2026-08-15
+uid: 3ad9db55-8738-4a66-a744-83e4a799e05a
+dateKind: collected
 ---
 ```cpp
 #include <bits/stdc++.h>

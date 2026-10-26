@@ -4,8 +4,10 @@ slug: legacy-3c1e9f210cc6
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 枚举
 date: 2026-08-15
+uid: 4c3432b1-bfd0-48e2-9930-fa858dd9a572
+dateKind: collected
 ---
 ##  P5301 [GXOI/GZOI2019] 宝牌一大堆
 

@@ -4,8 +4,11 @@ slug: legacy-bafd088c780d
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 动态规划
+  - 贪心
 date: 2026-08-15
+uid: bf3c3ec5-af75-4bc4-8161-adbda7142538
+dateKind: collected
 ---
 ## P5851
 

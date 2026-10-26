@@ -4,8 +4,11 @@ slug: legacy-53492972fc80
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 位运算
+  - 子集枚举
 date: 2026-08-15
+uid: d3349d5e-3fb6-47b2-a0e8-81bf2b9329cf
+dateKind: collected
 ---
 ## AT4168 [ARC100C] Or Plus Max
 

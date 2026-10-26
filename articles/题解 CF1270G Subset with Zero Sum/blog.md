@@ -4,8 +4,11 @@ slug: legacy-cdccb8a9f1e7
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 图论
+  - 环
 date: 2026-08-15
+uid: 206a683c-75ac-48de-bb45-8d751706d480
+dateKind: collected
 ---
 # CF1270G Subset with Zero Sum
 

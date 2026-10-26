@@ -5,8 +5,12 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - 杜教筛
+  - 狄利克雷卷积
 date: 2026-08-15
+uid: 633040b8-64f0-40b0-b076-41dcbad862ab
+dateKind: collected
 ---
 ## 杜教筛
 

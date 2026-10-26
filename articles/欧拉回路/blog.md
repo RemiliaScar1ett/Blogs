@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "图论"
 tags:
-  - "旧文迁移"
+  - 图论
 date: 2026-08-15
+uid: be0a7ad2-138f-4be6-8624-886b83f43b0d
+dateKind: collected
 ---
 ## 欧拉回路
 

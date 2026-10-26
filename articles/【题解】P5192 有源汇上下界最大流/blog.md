@@ -4,8 +4,11 @@ slug: legacy-949984b1dfb2
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 网络流
+  - 最短路
 date: 2026-08-15
+uid: 6596db11-f2d2-4085-b2f3-d1f3ba3de8b5
+dateKind: collected
 ---
 #P5192 有源汇上下界最大流
 

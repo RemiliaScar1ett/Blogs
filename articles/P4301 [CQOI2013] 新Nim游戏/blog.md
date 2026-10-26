@@ -4,8 +4,11 @@ slug: legacy-72dd62855709
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线性基
+  - 博弈论
 date: 2026-08-15
+uid: 56bbde27-77ca-4bb2-81ae-8b7113019b56
+dateKind: collected
 ---
 ## P4301 [CQOI2013] 新Nim游戏
 

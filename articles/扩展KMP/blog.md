@@ -2,11 +2,13 @@
 title: "扩展KMP"
 slug: legacy-2156b91cc11b
 tree:
-  - "笔记"
-  - "其他算法"
+  - 笔记
+  - 字符串
 tags:
-  - "旧文迁移"
+  - 字符串
 date: 2026-08-15
+uid: 2452c891-cd41-4485-9489-26d65f9788da
+dateKind: collected
 ---
 ## 扩展KMP(Z函数)
 

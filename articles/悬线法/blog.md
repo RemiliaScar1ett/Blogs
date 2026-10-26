@@ -5,8 +5,10 @@ tree:
   - "笔记"
   - "其他算法"
 tags:
-  - "旧文迁移"
+  - 动态规划
 date: 2026-08-15
+uid: daf61355-c3c1-47bf-8702-5f166c12ce5e
+dateKind: collected
 ---
 ## 悬线法
 
@@ -56,7 +58,7 @@ date: 2026-08-15
 
     我们可以把悬线看做是从障碍点和边界向下伸出的一条线。这样考虑，我们可以想到一个点 $(i,j)$ 对应的悬线长度可以从它上方的点 $(i-1,j)$ 对应的悬线长度再延伸一个单位长度得到。
 
-    即 ：$up(i,j)=\begin{cases}up(i-1,j)+1,&\texttt{$(i,j)$ 不是障碍点}\\0,&\texttt{$(i,j)$ 是障碍点} \end{cases}$。
+    即 ：$up(i,j)=\begin{cases}up(i-1,j)+1,&(i,j)\text{ 不是障碍点}\\0,&(i,j)\text{ 是障碍点} \end{cases}$。
 
 - $left(i,j)$：
 

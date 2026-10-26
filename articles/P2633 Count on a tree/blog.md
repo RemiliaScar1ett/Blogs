@@ -4,8 +4,11 @@ slug: legacy-597340712b34
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
+  - 树上算法
 date: 2026-08-15
+uid: 6358bbbd-a5f7-47c4-960e-7ed2014c70c0
+dateKind: collected
 ---
 ## P2633 Count on a tree
 

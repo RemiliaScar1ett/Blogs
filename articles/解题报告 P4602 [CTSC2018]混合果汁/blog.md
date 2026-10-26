@@ -4,8 +4,11 @@ slug: legacy-2239c61721a3
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
+  - 贪心
 date: 2026-08-15
+uid: a46800b4-5552-4334-8840-153c74bc8980
+dateKind: collected
 ---
 # P4602 [CTSC2018]混合果汁
 

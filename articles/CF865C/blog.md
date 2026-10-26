@@ -4,8 +4,10 @@ slug: legacy-48cd7cc53f01
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 概率期望
 date: 2026-08-15
+uid: 1cecc5df-bc11-4162-9634-26c8da4c7b19
+dateKind: collected
 ---
 # Gotta Go Fast
 

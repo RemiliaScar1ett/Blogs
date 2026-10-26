@@ -5,8 +5,11 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - FFT
 date: 2026-08-15
+uid: 53fb3fa6-deaf-4cf6-bac3-96bcb70f8610
+dateKind: collected
 ---
 ## 前置知识
 

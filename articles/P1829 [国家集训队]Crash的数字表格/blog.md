@@ -4,8 +4,11 @@ slug: legacy-64ba2a46ccf5
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 莫比乌斯反演
+  - 分块
 date: 2026-08-15
+uid: f456bbd8-5cb7-4666-a471-132ea79aa0ac
+dateKind: collected
 ---
 ## P1829 [国家集训队]Crash的数字表格 / JZPTAB
 

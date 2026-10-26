@@ -4,8 +4,14 @@ slug: legacy-b6fd93f24711
 tree:
   - "题解"
 tags:
-  - "旧文迁移"
+  - 线段树
+  - 并查集
+  - 最短路
+  - 动态规划
+  - 贪心
 date: 2026-08-15
+uid: c09ab038-0f9f-4048-9a9e-b4642c0bec9c
+dateKind: collected
 ---
 ## P9118 [春季测试 2023] 幂次
 

@@ -5,8 +5,12 @@ tree:
   - "笔记"
   - "数论"
 tags:
-  - "旧文迁移"
+  - 数论
+  - 莫比乌斯反演
+  - 分块
 date: 2026-08-15
+uid: 9edf4223-5536-4f49-98b2-cbd4185bbb3d
+dateKind: collected
 ---
 ## 莫比乌斯反演
 
