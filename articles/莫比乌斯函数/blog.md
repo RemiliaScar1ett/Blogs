@@ -11,6 +11,8 @@ tags:
 date: 2026-08-15
 uid: 13cfcaaf-af88-48bd-a1c4-496b7f08f0f2
 dateKind: collected
+summary: 介绍莫比乌斯函数的定义与基本性质，结合容斥原理和“破译密码”例题说明互质计数及整除分块的应用。
+updatedAt: 2026-10-26T16:13:49.732Z
 ---
 ## 莫比乌斯函数(Möbius)
 
